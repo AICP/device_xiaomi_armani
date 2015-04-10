@@ -10,8 +10,8 @@
         "branch": "cm-12.1"
     },
     {
-        "repository": "armani-dev/proprietary_vendor_xiaomi",
+        "repository": "AICP/proprietary_vendor_xiaomi",
         "target_path": "vendor/xiaomi",
-        "branch": "cm-12.1"
+        "branch": "lp5.1"
     }
 ]
