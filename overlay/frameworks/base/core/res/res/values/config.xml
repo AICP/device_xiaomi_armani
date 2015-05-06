@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 /* Copyright (c) 2013, The Linux Foundation. All rights reserved.
 ** Not a Contribution.
@@ -133,22 +133,18 @@
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
          (1-based arrays)
-
          Point 1:            (0, value[1]):             lux <= 0
          Point 2:     (level[1], value[2]):  0        < lux <= level[1]
          Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
          ...
          Point N+1: (level[N], value[N+1]):  level[N] < lux
-
          The control points must be strictly increasing.  Each control point
          corresponds to an entry in the brightness backlight values arrays.
          For example, if LUX == level[1] (first element of the levels array)
          then the brightness will be determined by value[2] (second element
          of the brightness values array).
-
          Spline interpolation is used to determine the auto-brightness
          backlight values for LUX levels between these control points.
-
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
         <item>1</item>
@@ -237,21 +233,26 @@
          for "perf_profile_values" array. Leave it blank if the device do not support
          performance profiles  -->
     <string name="config_perf_profile_default_entry" translatable="false">1</string>
-    <!-- ComponentName of a dream to show whenever the system would otherwise have
-         gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
-         try to start this dream if possible.  The dream should typically call startDozing()
-         to put the display into a low power state and allow the application processor
-         to be suspended.  When the dream ends, the system will go to sleep as usual.
-         Specify the component name or an empty string if none.
-         Note that doze dreams are not subject to the same start conditions as ordinary dreams.
-         Doze dreams will run whenever the power manager is in a dozing state. -->
+
+    <!-- Ambient Display : Dream of Notifications -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
+
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDoze">17</integer>
+    <integer name="config_screenBrightnessDoze">10</integer>
 
     <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOff">true</bool>
+
+    <!-- Specifies whether the dreams feature should be supported -->
+    <bool name="config_dreamsSupported">true</bool>
+
+    <!-- If supported, are dreams enabled? (by default) -->
+    <bool name="config_dreamsEnabledByDefault">true</bool>
+
+    <!-- Doze: force using accelerometer as pick up sensor -->
+    <bool name="config_dozeUseAccelerometer">true</bool>
+
 </resources>
