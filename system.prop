@@ -46,3 +46,11 @@ ro.telephony.call_ring.multiple=false
 
 # OTA
 cm.updater.uri=http://ota.randomdroids.com/api
+
+# hardware info
+ro.device.chipset=Qualcomm Snapdragon 400 MSM8228
+ro.device.cpu=1.6GHz quad-core Cortex-A7
+ro.device.gpu=Qualcomm Adreno 305
+ro.device.rear_cam=8 MP
+ro.device.front_cam=2 MP
+ro.device.screen_res=720x1280
