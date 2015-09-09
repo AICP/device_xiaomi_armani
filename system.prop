@@ -54,6 +54,3 @@ ro.device.gpu=Qualcomm Adreno 305
 ro.device.rear_cam=8 MP
 ro.device.front_cam=2 MP
 ro.device.screen_res=720x1280
-
-# AICP Device Maintainer
-ro.aicp.maintainer=TheStrix
