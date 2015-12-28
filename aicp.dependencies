@@ -1,6 +1,6 @@
 [
     {
-        "repository": "armani-dev/android_kernel_xiaomi_armani",
+        "repository": "armani-dev/kernel_test",
         "target_path": "kernel/xiaomi/armani",
         "branch": "cm-13.0"
     },
