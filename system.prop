@@ -46,3 +46,11 @@ persist.radio.msgtunnel.start=false
 persist.radio.multisim.config=dsds
 persist.radio.rat_on=combine
 ro.telephony.ril.config=simactivation
+
+# Hardware info
+ro.device.chipset=Qualcomm Snapdragon 400 MSM8228
+ro.device.cpu=1.6GHz quad-core Cortex-A7
+ro.device.gpu=Qualcomm Adreno 305
+ro.device.rear_cam=8 MP
+ro.device.front_cam=2 MP
+ro.device.screen_res=720x1280
