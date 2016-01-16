@@ -178,6 +178,7 @@ PRODUCT_PACKAGES += \
 # Qualcomm
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
+    ro.qualcomm.cabl=0 \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # Ramdisk
@@ -219,6 +220,4 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    ro.disableWifiApFirmwareReload=true \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0
+    ro.disableWifiApFirmwareReload=true
