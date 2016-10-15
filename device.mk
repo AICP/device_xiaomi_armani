@@ -83,10 +83,11 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8226 \
     memtrack.msm8226
 
-# DRM
+# Doze mode
 PRODUCT_PACKAGES += \
-    libshims_wvm
+    XiaomiDoze
 
+# DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
