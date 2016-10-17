@@ -1,0 +1,17 @@
+[
+  {
+	"repository": "armani-dev/android_kernel_xiaomi_armani",
+	"target_path": "kernel/xiaomi/armani",
+	"branch": "cm-14.0"
+  },
+  {
+	"repository": "hemantbeast/proprietary_vendor_xiaomi",
+	"target_path": "vendor/xiaomi",
+	"branch": "cm-14.0"
+  },
+  {
+    "repository": "CyanogenMod/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+	"branch": "cm-14.0"
+  }
+]
