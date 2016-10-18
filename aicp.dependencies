@@ -1,6 +1,6 @@
 [
   {
-	"repository": "hemantbeast/android_kernel_xiaomi_armani",
+	"repository": "hemantbeast/xiaomi_armani_kernel",
 	"target_path": "kernel/xiaomi/armani",
 	"branch": "cm-14.0"
   },
