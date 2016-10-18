@@ -135,6 +135,10 @@ BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
+#Telephony-ext
+PRODUCT_PACKAGES += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
+
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
