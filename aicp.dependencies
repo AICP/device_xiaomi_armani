@@ -13,5 +13,10 @@
     "repository": "CyanogenMod/android_device_qcom_common",
     "target_path": "device/qcom/common",
 	"branch": "cm-14.0"
+  },
+  {
+	"repository": "TheMuppets/proprietary_vendor_qcom_binaries",
+	"target_path": "vendor/qcom/binaries",
+	"branch": "cm-14.0"
   }
 ]
