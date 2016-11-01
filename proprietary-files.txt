@@ -35,7 +35,7 @@ bin/hci_qcomm_init
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.vendor.msm8226.so
+lib/hw/camera.vendor.msm8226.so|6ac9bd33114fc9f2d3a00eb60ee37ebece82c5b2
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 vendor/lib/libactuator_dw9714.so
@@ -75,7 +75,7 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 
 # Camera (moto shamu)
-vendor/lib/libmmcamera_faceproc.so
+vendor/lib/libmmcamera_faceproc.so|ac49bcc1aa20ff9f2c118f6c233b658f93543202
 vendor/lib/libmmjpeg.so
 
 # Camera firmware
