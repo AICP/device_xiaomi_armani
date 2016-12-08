@@ -24,6 +24,7 @@ enum {
 
 typedef struct governor_settings {
     int is_interactive;
+    char *above_hispeed_delay;
     int boost;
     int boostpulse_duration;
     int go_hispeed_load;
@@ -42,6 +43,7 @@ typedef struct governor_settings {
 
 static power_profile profiles[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
+        .above_hispeed_delay = "20000",
         .boost = 0,
         .boostpulse_duration = 0,
         .go_hispeed_load = 90,
@@ -58,6 +60,7 @@ static power_profile profiles[PROFILE_MAX] = {
         .scaling_min_freq_off = 300000,
     },
     [PROFILE_BALANCED] = {
+        .above_hispeed_delay = "20000 998400:40000 1401600:20000",
         .boost = 0,
         .boostpulse_duration = 60000,
         .go_hispeed_load = 50,
@@ -74,6 +77,7 @@ static power_profile profiles[PROFILE_MAX] = {
         .scaling_min_freq_off = 300000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
+        .above_hispeed_delay = "20000 998400:40000 1401600:20000",
         .boost = 1,
         /* The CPU is already boosted, set duration to zero
          * to avoid unneccessary writes to boostpulse */
@@ -92,6 +96,7 @@ static power_profile profiles[PROFILE_MAX] = {
         .scaling_min_freq_off = 300000,
     },
     [PROFILE_BIAS_POWER_SAVE] = {
+        .above_hispeed_delay = "20000",
         .boost = 0,
         .boostpulse_duration = 60000,
         .go_hispeed_load = 90,

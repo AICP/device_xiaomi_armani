@@ -125,6 +125,8 @@ static void set_power_profile(int profile)
 
     ALOGD("%s: setting profile %d", __func__, profile);
 
+    sysfs_write_str(INTERACTIVE_PATH "above_hispeed_delay",
+                    profiles[profile].above_hispeed_delay);
     sysfs_write_int(INTERACTIVE_PATH "boost",
                     profiles[profile].boost);
     sysfs_write_int(INTERACTIVE_PATH "boostpulse_duration",
