@@ -143,6 +143,10 @@ static void set_power_profile(int profile)
                     profiles[profile].max_freq_hysteresis);
     sysfs_write_str(INTERACTIVE_PATH "target_loads",
                     profiles[profile].target_loads);
+    sysfs_write_int(INTERACTIVE_PATH "timer_rate",
+                    profiles[profile].timer_rate);
+    sysfs_write_int(INTERACTIVE_PATH "timer_slack",
+                    profiles[profile].timer_slack);
     sysfs_write_int(CPUFREQ_PATH "scaling_max_freq",
                     profiles[profile].scaling_max_freq);
 
