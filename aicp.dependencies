@@ -2,12 +2,12 @@
   {
 	"repository": "hemantbeast/xiaomi_armani_kernel",
 	"target_path": "kernel/xiaomi/armani",
-	"branch": "cm-14.1"
+	"branch": "cm-14.x"
   },
   {
-	"repository": "hemantbeast/proprietary_vendor_xiaomi",
+	"repository": "AICP/proprietary_vendor_xiaomi",
 	"target_path": "vendor/xiaomi",
-	"branch": "cm-14.1"
+	"branch": "n7.1"
   },
   {
     "repository": "CyanogenMod/android_device_qcom_common",
@@ -20,7 +20,7 @@
 	"branch": "cm-14.1"
   },
   {
-    "repository": "android_packages_resources_devicesettings",
+    "repository": "CyanogenMod/android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings"
   }
 ]
