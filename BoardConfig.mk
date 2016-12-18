@@ -86,7 +86,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += \
     hardware/cyanogen/cmhw \
-    $(VENDOR_PATH)/cmhw
+    $(LOCAL_PATH)/cmhw
 
 # Headers
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
