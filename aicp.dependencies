@@ -2,7 +2,7 @@
   {
     "repository": "hemantbeast/xiaomi_armani_kernel",
     "target_path": "kernel/xiaomi/armani",
-    "branch":       "cm-14.x"
+    "branch":       "aicp"
   },
   {
     "repository": "AICP/proprietary_vendor_xiaomi",
