@@ -33,6 +33,9 @@ vendor/lib/soundfx/libqcvirt.so
 # Bluetooth
 bin/hci_qcomm_init
 
+# Browser
+-app/ViaBrowser/ViaBrowser.apk
+
 # Camera
 bin/mm-qcamera-daemon
 lib/hw/camera.vendor.msm8226.so|6ac9bd33114fc9f2d3a00eb60ee37ebece82c5b2
