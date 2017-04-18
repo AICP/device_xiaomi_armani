@@ -162,9 +162,6 @@ static void set_power_profile(int profile)
 static void power_hint(__attribute__((unused)) struct power_module *module,
                        power_hint_t hint, void *data)
 {
-    char buf[80];
-    int len;
-
     switch (hint) {
     case POWER_HINT_INTERACTION:
         if (!is_profile_valid(current_power_profile)) {
@@ -176,13 +173,9 @@ static void power_hint(__attribute__((unused)) struct power_module *module,
             return;
 
         if (boostpulse_open() >= 0) {
-            /* The given value is expressed in msecs, convert it to usecs */
-            unsigned long duration_usec = *(int32_t *)data * 1000;
-            snprintf(buf, sizeof(buf), "%lu", duration_usec);
-            len = write(boostpulse_fd, &buf, sizeof(buf));
+            int len = write(boostpulse_fd, "1", 2);
             if (len < 0) {
-                strerror_r(errno, buf, sizeof(buf));
-                ALOGE("Error writing to boostpulse: %s\n", buf);
+                ALOGE("Error writing to boostpulse: %s\n", strerror(errno));
 
                 pthread_mutex_lock(&lock);
                 close(boostpulse_fd);
