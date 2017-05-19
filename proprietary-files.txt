@@ -175,7 +175,7 @@ vendor/lib/libmmosal.so
 vendor/lib/libSHIMDivxDrm.so
 
 # Perf
-bin/mpdecision
+#bin/mpdecision
 vendor/lib/libqti-perfd-client.so
 
 # Qualcomm
