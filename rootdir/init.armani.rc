@@ -158,7 +158,7 @@ on boot
     write /sys/module/msm_hotplug/max_cpus_online 4
     write /sys/module/msm_hotplug/max_cpus_online_susp 2
     write /sys/module/msm_hotplug/min_cpus_online 1
-    write sys/module/msm_hotplug/update_rates "200 5:100 50:50 350:200"
+    write /sys/module/msm_hotplug/update_rates "200 5:100 50:50 350:200"
 
 on post-fs-data
     # Create directory for TZ Apps
