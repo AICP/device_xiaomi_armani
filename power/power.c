@@ -131,10 +131,6 @@ static void set_power_profile(int profile)
 
     sysfs_write_str(INTERACTIVE_PATH "above_hispeed_delay",
                     profiles[profile].above_hispeed_delay);
-    sysfs_write_int(INTERACTIVE_PATH "boost",
-                    profiles[profile].boost);
-    sysfs_write_int(INTERACTIVE_PATH "boostpulse_duration",
-                    profiles[profile].boostpulse_duration);
     sysfs_write_int(INTERACTIVE_PATH "go_hispeed_load",
                     profiles[profile].go_hispeed_load);
     sysfs_write_int(INTERACTIVE_PATH "hispeed_freq",

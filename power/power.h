@@ -25,8 +25,6 @@ enum {
 typedef struct governor_settings {
     int is_interactive;
     char *above_hispeed_delay;
-    int boost;
-    int boostpulse_duration;
     int go_hispeed_load;
     int go_hispeed_load_off;
     int hispeed_freq;
@@ -46,8 +44,6 @@ typedef struct governor_settings {
 static power_profile profiles[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
         .above_hispeed_delay = "19000",
-        .boost = 0,
-        .boostpulse_duration = 0,
         .go_hispeed_load = 90,
         .go_hispeed_load_off = 90,
         .hispeed_freq = 787200,
@@ -64,9 +60,7 @@ static power_profile profiles[PROFILE_MAX] = {
         .scaling_min_freq_off = 300000,
     },
     [PROFILE_BALANCED] = {
-        .above_hispeed_delay = "19000 1401600:39000",
-        .boost = 0,
-        .boostpulse_duration = 60000,
+        .above_hispeed_delay = "19000 1190400:39000 1401600:19000",
         .go_hispeed_load = 80,
         .go_hispeed_load_off = 90,
         .hispeed_freq = 1190400,
@@ -83,11 +77,7 @@ static power_profile profiles[PROFILE_MAX] = {
         .scaling_min_freq_off = 300000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
-        .above_hispeed_delay = "19000 1401600:39000",
-        .boost = 1,
-        /* The CPU is already boosted, set duration to zero
-         * to avoid unneccessary writes to boostpulse */
-        .boostpulse_duration = 0,
+        .above_hispeed_delay = "19000 1190400:39000 1401600:19000",
         .go_hispeed_load = 50,
         .go_hispeed_load_off = 50,
         .hispeed_freq = 1190400,
@@ -105,8 +95,6 @@ static power_profile profiles[PROFILE_MAX] = {
     },
     [PROFILE_BIAS_POWER_SAVE] = {
         .above_hispeed_delay = "19000",
-        .boost = 0,
-        .boostpulse_duration = 60000,
         .go_hispeed_load = 90,
         .go_hispeed_load_off = 90,
         .hispeed_freq = 998400,
