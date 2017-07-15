@@ -150,9 +150,9 @@ on boot
     write /sys/kernel/alucard_hotplug/hotplug_enable 1
 
     # Set MSM Hotplug values
-    write /sys/module/msm_hotplug/boost_lock_duration 2000
+    write /sys/module/msm_hotplug/boost_lock_duration 1500
     write /sys/module/msm_hotplug/cpus_boosted 2
-    write /sys/module/msm_hotplug/down_lock_duration 800
+    write /sys/module/msm_hotplug/down_lock_duration 500
     write /sys/module/msm_hotplug/fast_lane_load 99
     write /sys/module/msm_hotplug/history_size 10
     write /sys/module/msm_hotplug/max_cpus_online 4
