@@ -165,9 +165,6 @@ static void power_hint(__attribute__((unused)) struct power_module *module,
             return;
         }
 
-        if (!profiles[current_power_profile].boostpulse_duration)
-            return;
-
         if (boostpulse_open() >= 0) {
             int len = write(boostpulse_fd, "1", 2);
             if (len < 0) {
