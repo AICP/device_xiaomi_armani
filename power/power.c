@@ -131,6 +131,10 @@ static void set_power_profile(int profile)
 
     sysfs_write_str(INTERACTIVE_PATH "above_hispeed_delay",
                     profiles[profile].above_hispeed_delay);
+    sysfs_write_int(INTERACTIVE_PATH "boost",
+                    profiles[profile].boost);
+    sysfs_write_int(INTERACTIVE_PATH "boostpulse_duration",
+                    profiles[profile].boostpulse_duration);
     sysfs_write_int(INTERACTIVE_PATH "go_hispeed_load",
                     profiles[profile].go_hispeed_load);
     sysfs_write_int(INTERACTIVE_PATH "hispeed_freq",
@@ -164,6 +168,9 @@ static void power_hint(__attribute__((unused)) struct power_module *module,
             ALOGD("%s: no power profile selected yet", __func__);
             return;
         }
+
+        if (!profiles[current_power_profile].boostpulse_duration)
+            return;
 
         if (boostpulse_open() >= 0) {
             int len = write(boostpulse_fd, "1", 2);

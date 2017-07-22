@@ -25,6 +25,8 @@ enum {
 typedef struct governor_settings {
     int is_interactive;
     char *above_hispeed_delay;
+    int boost;
+    int boostpulse_duration;
     int go_hispeed_load;
     int go_hispeed_load_off;
     int hispeed_freq;
@@ -43,7 +45,9 @@ typedef struct governor_settings {
 
 static power_profile profiles[PROFILE_MAX] = {
     [PROFILE_POWER_SAVE] = {
-        .above_hispeed_delay = "19000",
+        .above_hispeed_delay = "20000",
+        .boost = 0,
+        .boostpulse_duration = 0,
         .go_hispeed_load = 90,
         .go_hispeed_load_off = 90,
         .hispeed_freq = 787200,
@@ -60,15 +64,17 @@ static power_profile profiles[PROFILE_MAX] = {
         .scaling_min_freq_off = 300000,
     },
     [PROFILE_BALANCED] = {
-        .above_hispeed_delay = "19000 1190400:39000 1401600:19000",
-        .go_hispeed_load = 80,
+        .above_hispeed_delay = "20000",
+        .boost = 0,
+        .boostpulse_duration = 60000,
+        .go_hispeed_load = 60,
         .go_hispeed_load_off = 90,
-        .hispeed_freq = 1190400,
+        .hispeed_freq = 998400,
         .hispeed_freq_off = 787200,
         .io_is_busy = 1,
-        .min_sample_time = 59000,
+        .min_sample_time = 60000,
         .max_freq_hysteresis = 0,
-        .target_loads = "50 998400:70 1190400:85 1401600:90",
+        .target_loads = "85 1190400:90 1401600:95",
         .target_loads_off = "95 1401600:99",
         .timer_rate = 30000,
         .timer_slack = 30000,
@@ -77,7 +83,11 @@ static power_profile profiles[PROFILE_MAX] = {
         .scaling_min_freq_off = 300000,
     },
     [PROFILE_HIGH_PERFORMANCE] = {
-        .above_hispeed_delay = "19000 1190400:39000 1401600:19000",
+        .above_hispeed_delay = "20000",
+        .boost = 1,
+        /* The CPU is already boosted, set duration to zero
+         * to avoid unneccessary writes to boostpulse */
+        .boostpulse_duration = 0,
         .go_hispeed_load = 50,
         .go_hispeed_load_off = 50,
         .hispeed_freq = 1190400,
@@ -94,7 +104,9 @@ static power_profile profiles[PROFILE_MAX] = {
         .scaling_min_freq_off = 300000,
     },
     [PROFILE_BIAS_POWER_SAVE] = {
-        .above_hispeed_delay = "19000",
+        .above_hispeed_delay = "20000",
+        .boost = 0,
+        .boostpulse_duration = 60000,
         .go_hispeed_load = 90,
         .go_hispeed_load_off = 90,
         .hispeed_freq = 998400,
