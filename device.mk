@@ -199,7 +199,11 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf \
     $(LOCAL_PATH)/configs/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
+
+PRODUCT_PACKAGES += \
+    sensors.msm8226
 
 # Storage
 PRODUCT_PROPERTY_OVERRIDES += \
