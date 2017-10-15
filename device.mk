@@ -74,7 +74,7 @@ PRODUCT_PACKAGES += \
     bdaddr_xiaomi
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init.armani.bt.sh:system/bin/init.armani.bt.sh
+    $(LOCAL_PATH)/configs/init.armani.bt.sh:system/vendor/bin/init.armani.bt.sh
 
 # CABL
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -199,7 +199,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf
+    $(LOCAL_PATH)/configs/sensor_def_qcomdev.conf:system/vendor/etc/sensor_def_qcomdev.conf
 
 # Storage
 PRODUCT_PROPERTY_OVERRIDES += \
