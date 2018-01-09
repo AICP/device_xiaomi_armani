@@ -25,6 +25,9 @@ TARGET_SCREEN_WIDTH := 720
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
+# HIDL HALs
+$(call inherit-product, $(LOCAL_PATH)/hidl-hals.mk)
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
